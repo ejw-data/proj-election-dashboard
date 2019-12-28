@@ -2,16 +2,80 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+		<meta name='viewport' content='width=device-width, initial-scale=1.0,  shrink-to-fit=no'>
 		<meta http-equiv='X-UA-Compatible' content='ie=edge'>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+		<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+		<link rel="stylesheet" href="../static/css/mybootstrap.css" type="text/css">
 		<title>Project 2 Template</title>
 	</head>
 	<body>
+		<div class = "container theme-showcase" role = "main">
+
+			<!--  New Section -->
+			<div class = "row">
+				<div class = "col-md-12">
+					<div id="carouselheader" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner">
+
+							<!-- https://intellipaat.com/blog/wp-content/uploads/2016/11/2-e1562234377721.png -->
+							<div class="carousel-item active">
+								<img src="https://intellipaat.com/blog/wp-content/uploads/2016/11/What-is-Data-Science.docx.jpg" class="d-block w-50" alt="...">
+							</div>
+							<div class="carousel-item">
+								<img src="https://intellipaat.com/blog/wp-content/uploads/2016/11/DataScience-04-1.jpg" class="d-block w-100" alt="...">
+							</div>
+							<div class="carousel-item">
+								<img src="https://intellipaat.com/blog/wp-content/uploads/2016/11/2-e1562234377721.png" class="d-block w-100" alt="...">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--  New Section -->
+			<div class = "row">
+				<div class = "col-md-6">
+					<img src="../static/images/ad_hoc_scatter.png" class="d-block w-100" alt="State Scatter Plot">
+				</div>
+				<div class = "col-md-6">
+					<h2>Recent News</h2>
+					<ul>
+						<li>News article one</li>
+						<li>News article two</li>
+						<li>News article three</li>
+						<li>News article four</li>
+						<li>News article five</li>
+					</ul>
+				</div>
+			</div>
+
+			<!--  New Section -->
+			<div class = "row">
+				<div class = "col-md-6">
+					<img src="../static/images/ad_hoc_radial.png" class="d-block w-100" alt="Radial Plot">
+				</div>
+				<div class = "col-md-6">
+					<img src="../static/images/ad_hoc_branching.png" class="d-block w-100" alt="Branching Plot">
+				</div>
+			</div>
+
+			<!--  New Section -->
+			<div class = "row">
+				<div class = "col-md-12">
+					<img src="../static/images/ad_hoc_map.png" class="d-block w-100" alt="State Map Plot">
+				</div>
+			</div>
+
+		</div>
 		<div class="chart"></div>
 		<script src="https://d3js.org/d3.v5.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="app.js"></script>
   </body>
 </html>
