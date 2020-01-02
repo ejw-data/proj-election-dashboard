@@ -1,0 +1,67 @@
+.aText {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 18px;
+  fill: black;
+  text-anchor: left;
+}
+
+.stateText {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  fill: black;
+  text-anchor: middle;
+  stroke-width: "0.9";
+  font-size: 12px;
+}
+
+
+.d3-tip {
+  padding: 10px;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  line-height: 1.1em;
+  color: black;
+  text-align: center;
+  background: white; 
+  border: solid;
+  border-color: rgb(22, 88, 66);
+  stroke: black;
+  border-radius: 12px;
+}
+
+
+/* Mobile Rules */
+@media screen and (max-width: 530px) {
+  .stateText {
+    display: none;
+  }
+
+  
+}
+
+@media screen and (max-width: 400px) {
+  .aText {
+    font-size: 13px;
+  }
+}
+
+.active{
+  font-weight: bold;
+  fill: rgb(22, 88, 66);
+  transition: fill 0.3s ease-out;
+  text-anchor: middle;
+  
+}
+
+.inactive {
+  font-weight: lighter;
+  fill: #c9c9c9;
+  transition: fill 0.3s ease-out;
+  text-anchor: middle;
+}
+
+.inactive:hover {
+  fill: mediumorchid;
+  font-weight: bold;
+  cursor: pointer;
+}
