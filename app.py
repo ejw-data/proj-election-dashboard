@@ -1,31 +1,30 @@
-# from sqlalchemy.dialects import postgresql
-from flask import Flask, render_template, request, jsonify
+# Dependencies
+# ----------------------------------  https://github.com/pallets/flask-sqlalchemy/issues/98
+from flask import Flask, render_template 
 from flask_sqlalchemy import SQLAlchemy
-from flask_marshmallow import Marshmallow
-import os
+# from sqlalchemy import create_engine
+# from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String, Numeric
 
 app = Flask(__name__)
 
-ENV = 'dev'
+ENV = 'prod'
 
 if ENV == 'dev':
     app.debug = True
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost:5433/election_db'
 else:
     app.debug = False
-    app.config['SQLALCHEMY_DATABASE_URI'] = ''
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://bdwrgfxtgonvby:333ccd10d6c1f8d04a9c2bd3023b9e48b343371559c97a034a28080decf9892c@ec2-107-22-216-123.compute-1.amazonaws.com:5432/d6cd55jo1ktp4t'
 
 app.config['SQLACHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
-# New - added with Marshmallow test
-ma = Marshmallow(app)
-# End New
+Base = declarative_base()
 
-
-# Using smaller test database to see if this will work
-class Election(db.Model):
+class Election(Base):
     __tablename__ = 'test'
     id = db.Column(db.Integer, primary_key=True)
     x = db.Column(db.Numeric)
@@ -37,38 +36,16 @@ class Election(db.Model):
         self.y = y
         self.z = z
 
-# New - added with Marshmallow test
-class ElectionSchema(ma.Schema):
-    class Meta:
-        fields = ('id','x','y','z')
-
-election_schema = ElectionSchema()
-elections_schema = ElectionSchema(many=True)
-# End New
-
-
 @app.route('/', methods=['GET'])
 def index():
-
-    # Method using Marshmallow
-    data1=Election.query.all()
-    result = elections_schema.dump(data1)
-    return result
-
-        # Method similar to class example, but this method does not connect to the database like the Heroku examples
-        # session = Session(engine)
-        # results = session.query(house_districts.first_name).all()
-        # session.close()
-
-        # Method used in tutorial
-        # results = session.query(Election).filter_by(x=6).first()
-
-        # Test:  Shows that dictionary can be sent to the browser and it works
-        # return jsonify({'msg':'Hellow world'})
-
-        # Structure of what final return should look like
-        # return render_template('index.html', results = results)
+    test = db.session.query(Election).all()
+    for record in test:
+        print(record.y)
+    return render_template("index.html", data=test)
 
 if __name__ == '__main__':
     app.run()
+
+
+
 
