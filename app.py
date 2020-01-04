@@ -4,7 +4,7 @@ from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 # from sqlalchemy import create_engine
 # from sqlalchemy.orm import sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
+# from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, Numeric
 
 app = Flask(__name__)
@@ -22,9 +22,9 @@ app.config['SQLACHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
-Base = declarative_base()
+#Base = declarative_base()
 
-class Election(Base):
+class Election(db.Model):  # removed:  Base
     __tablename__ = 'test'
     id = db.Column(db.Integer, primary_key=True)
     x = db.Column(db.Numeric)
@@ -36,7 +36,7 @@ class Election(Base):
         self.y = y
         self.z = z
 
-@app.route('/', methods=['GET'])
+@app.route('/')    # removed:  , methods=['GET']
 def index():
     test = db.session.query(Election).all()
     for record in test:

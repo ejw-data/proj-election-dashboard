@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "/Users/pest/anaconda3/envs/PythonData=3.6/bin/python"
+    "python.pythonPath": "C:\\Users\\ejwda\\.virtualenvs\\dashboard-project2-fbLDoQrm\\Scripts\\python.exe",
+    "python.linting.pylintArgs": ["--load-plugins", "pylint_flask"]
 }
