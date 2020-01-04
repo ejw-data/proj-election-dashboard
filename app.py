@@ -40,8 +40,27 @@ class Election(db.Model):  # removed:  Base
 def index():
     test = db.session.query(Election).all()
     for record in test:
-        print(record.y)
-    return render_template("index.html", data=test)
+        print(record.x)
+    return render_template("index.html")
+
+
+@app.route("/api/<district>")
+def district_info(district):
+    listings=[]
+
+    query = db.session.query(Election).all()  #(Election).filter(district).all()
+    for record in query:
+        print(record.z)
+    # listings['value']=
+
+    # query for disctrict data - specific name it by a key
+    # republican_votes_2014 = query()
+    # listngs['repub_vote_14'] = republican_votes_2014
+
+    # listngs['repub_vote_14'] = query() 
+
+
+    return render_template("district_template.html")
 
 if __name__ == '__main__':
     app.run()
