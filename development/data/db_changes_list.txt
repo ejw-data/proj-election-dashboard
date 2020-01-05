@@ -1,0 +1,32 @@
+Change key names in the future:
+
+From
+***
+"votepercent_president2016_democrat" FLOAT,
+"votepercent_president2016_republican" FLOAT,
+***
+To
+"2016votepercent_president_democrat" FLOAT,
+"2016votepercent_president_republican" FLOAT,
+
+
+From
+***
+"rvotepercent_house_democrat" FLOAT,
+"rvotepercent_house_republican" FLOAT,
+***
+To
+"2016votepercent_house_democrat" FLOAT,
+"2016votepercent_house_republican" FLOAT,
+
+
+From
+***
+"tvotetotal_president" FLOAT,
+"qvote_president_democrat" FLOAT,
+"qvote_president_republican" FLOAT,
+***
+To
+"2016votetotal_president" FLOAT,
+"2016vote_president_democrat" FLOAT,
+"2016vote_president_republican" FLOAT,
