@@ -176,7 +176,7 @@ def index():
 
 @app.route("/<district>")
 def district_info(district):
-    election = Election.query.filter_by(id=district)
+    election = Election.query.filter_by(code=district)
     election_schema = ElectionSchema(many=True)
     data = election_schema.dump(election)
     return render_template("district_template.html", data = data)
@@ -188,9 +188,9 @@ def district_table():
     data= elections_schema.dump(elections)
     return {"data":data}
 
-@app.route("/api/<num>")
-def district_api(num):
-    election = Election.query.filter_by(id=num)
+@app.route("/api/<district>")
+def district_api(district):
+    election = Election.query.filter_by(code=district)
     election_schema = ElectionSchema(many=True)
     result = election_schema.dump(election)
     data = result[0]
