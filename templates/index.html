@@ -22,7 +22,10 @@
   <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
   <script src="https://d3js.org/d3.v5.min.js"></script>
 
+  
+
 </head>
+
 <body>
   <div class="container">
 
@@ -71,7 +74,6 @@
         <div id="map3"><!-- Append Map. --></div>
       </div>
     </div>
-  </div>
 
   <div class="row row-min">
     <div class="col-xs-12 col-md-12 col-lg-12 col-min">    
@@ -79,12 +81,15 @@
     </div>
   </div>
 
-  <!-- <div class="row row-min"> -->
-    <!-- <div class="col-xs-12 col-md-12 col-lg-12 col-min">     -->
-      <!-- <div id="linechart">Append Linechart Plot.</div> -->
-    <!-- </div> -->
-  <!-- </div> -->
+  <!-- <div class="row row-min"> 
+    <div class="col-xs-12 col-md-12 col-lg-12 col-min col-line">   
+      <button onclick="transition()">Update</button> 
+      <div id="linechart"></div>
+    </div>
+  </div> -->
 
+  <!-- Line Chart JS -->
+  <script type="text/javascript" src="https://d3js.org/d3.v3.js"></script>
   <script type="text/javascript" src="../static/js/config.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
@@ -94,6 +99,9 @@
   <script type="text/javascript" src="../static/js/mapgamma.js"></script>
   <script type="text/javascript" src="../static/js/mapdelta.js"></script>
   <script type="text/javascript" src="../static/js/mapzed.js"></script>
+ 
+  
+
 
 </body>
 

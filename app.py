@@ -185,16 +185,17 @@ def district_info(district):
 def district_table():
     elections = Election.query.all()  #.filter_by(x=2)
     elections_schema = ElectionSchema(many=True)
-    data= elections_schema.dump(elections)
-    return {"data":data}
+    result= elections_schema.dump(elections)
+    data = jsonify(result)
+    return data
 
 @app.route("/api/<district>")
 def district_api(district):
     election = Election.query.filter_by(code=district)
     election_schema = ElectionSchema(many=True)
     result = election_schema.dump(election)
-    data = result[0]
-    return {"data":data}
+    data = jsonify(result)
+    return data
 
 
 #Need Route for my scatter and line graphs and route for individual pages.

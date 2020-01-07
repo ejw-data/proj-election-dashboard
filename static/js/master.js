@@ -1,5 +1,5 @@
-var svgWidth = 1140;     //1060
-var svgHeight = 560;     //800
+var svgWidth1 = 1140;     //1060
+var svgHeight1 = 560;     //800
 
 var margin = {
     top: 160,
@@ -8,8 +8,8 @@ var margin = {
     left: 80
 };
 
-var width = svgWidth - margin.left - margin.right;
-var height = svgHeight - margin.top - margin.bottom;
+var width = svgWidth1 - margin.left - margin.right;
+var height = svgHeight1 - margin.top - margin.bottom;
 
 
 // Create an SVG wrapper, append an SVG group that will hold our chart,
@@ -17,8 +17,8 @@ var height = svgHeight - margin.top - margin.bottom;
 var svg = d3
     .select("#scatter")
     .append("svg")
-    .attr("width", svgWidth)
-    .attr("height", svgHeight);
+    .attr("width", svgWidth1)
+    .attr("height", svgHeight1);
 
 // Append an SVG group
 var chartGroup = svg.append("g")
@@ -148,10 +148,13 @@ function updateToolTip(circlesGroup, chosenXAxis, chosenYAxis) {
     return circlesGroup;
 }
 
-// Retrieve data from the CSV file and execute everything below
-d3.csv("../static/data/data.csv").then(function (data) {
-    // console.log(data);
+// // Retrieve data from the CSV file and execute everything below
+// d3.csv("../static/data/data.csv").then(function (data) {
+//     // console.log(data);
 
+// Retrieve data from the CSV file and execute everything below
+d3.json("api/all").then(function (data) {
+    // console.log(data);
 
 
     // xLinearScale function above csv import

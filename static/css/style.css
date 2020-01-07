@@ -54,11 +54,30 @@ h4 {
   margin-bottom:3em;
 }
 
-.col-map{
+.col-map, .col-line{
   min-height: 400px;
   max-width:100%;
 }
 
-#map, #map2, #map3{
+#map, #map2, #map3, #linechart{
   height:100%;
+}
+
+
+/* Line Chart CSS */
+button {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.browser text {
+  text-anchor: left;
 }

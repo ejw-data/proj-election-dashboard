@@ -1,4 +1,4 @@
-CREATE TABLE "house_districts" (
+CREATE TABLE "districts" (
 "id" serial primary key,
 "district" VARCHAR,
 "code" VARCHAR,
