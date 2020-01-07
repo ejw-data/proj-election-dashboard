@@ -150,11 +150,11 @@ function updateToolTip(circlesGroup, chosenXAxis, chosenYAxis) {
 
 // // Retrieve data from the CSV file and execute everything below
 // d3.csv("../static/data/data.csv").then(function (data) {
-//     // console.log(data);
+//     console.log(data);
 
 // Retrieve data from the CSV file and execute everything below
 d3.json("api/all").then(function (data) {
-    // console.log(data);
+    console.log(data);
 
 
     // xLinearScale function above csv import
