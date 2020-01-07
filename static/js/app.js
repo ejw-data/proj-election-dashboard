@@ -53,7 +53,9 @@ var svg = d3.select("#linechart").append("svg")    // changed select(body) to se
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.tsv("../static/data/data.tsv", function(error, data) {
+// d3.tsv("../static/data/data.tsv", function(error, data) {
+d3.json("/api/election/president/CA-01", function(error, data) {
+  
   
   color.domain(d3.keys(data[0]).filter(function(key) { return key !== "date"; }));
 
