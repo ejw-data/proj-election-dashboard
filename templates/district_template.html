@@ -1,45 +1,43 @@
-<head>
-    <meta charset="UTF-8">
-    <title>Election Dashboard</title>
-    <!-- Bootstrap and general website structure -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../static/css/mybootstrap.css" type="text/css">   <!-- Custom CSS that can be merged into style.css -->
-  <link rel="stylesheet" href="../static/css/style.css">
-  <!-- May Need to add in  -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
-  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <link rel="stylesheet" href="../static/css/style.css">
+<!DOCTYPE html>
+<html lang="en">
 
-</head>
-<body>
-  <div class="container">
-    <div class="row header-bg row-min">
-      <div class="col-xs-12 col-md-12 col-lg-12 header-title col-min">   
-        <h1>Election Voting Trends</h1>
-      </div>
-    </div>
-    <div class="row row-min">
-      <div class="col-xs-12 col-md-12 col-lg-12">   
-        <h2>Every 10 years...</h2><p>the United States Census determines the number of electoral votes for each state and the number of US House of Representatives members will be sent to Washington.  The determination of the district boundaries are drawn by each state, which leads to interesting shapes with unique characteristics.</p>
-        <p>{{data[0].x}}</p>
-        <p>{{data[0].y}}</p>
-        <p>{{data[0].z}}</p>
-        <p>{{data}}</p>
+  <head>
+      <meta charset="UTF-8">
+      <title>Election Dashboard</title>
+      <!-- Bootstrap and general website structure -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/css/mybootstrap.css" type="text/css">   <!-- Custom CSS that can be merged into style.css -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <!-- May Need to add in  -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    
 
-        <p>On this page you will find a variety of information about the districts of each state and how they are unique from one and another and how this may influence current voting trends.</p>
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="row header-bg row-min">
+        <div class="col-xs-12 col-md-12 col-lg-12 header-title col-min">   
+          <h2 style="color: #E9141D">Congressional Voting Trends</h2>
+        </div>
       </div>
-    </div>
-    <div class="row row-min">
-      <div class="col-xs-12 col-md-12 col-lg-12 col-min">
-        <button onclick="transition()">Update</button>    
-        <div id="linechart"><!-- Append LineChart --></div>
+      <div class="row row-min">
+        <div class="col-xs-12 col-md-12 col-lg-12">
+          <h2 style= "color: #00AEF3">Every 10 years...</h2 ><p>  as mandated by Article 1, Section 2 of the US Constitution and Title 13 of the US Code, the Census determines the number of electoral votes for each state and the number of US House of Representatives.  The determination of the district boundaries are drawn by each state's legislature, which can lead to interesting geographical shapes with unique characteristics.
+            On this page you'll find a variety of data about the districts of each state, their uniqueness and how this may influence the upcoming 2020 elections. <strong>Please click, hover and zoom til your heart's content!</strong></p>
+        </div>
       </div>
-    </div>
-  </div>
-  <script src="https://d3js.org/d3.v3.js"></script>
-  <script type="text/javascript" src="../static/js/app.js"></script>
-</body>
+      <div class="row row-min">
+        <div class="col-xs-12 col-md-12 col-lg-12 col-min">
+          <button onclick="transition()">Update</button>    
+          <div id="linechart"><!-- Append LineChart --></div>
+        </div>
+      </div>
+    <script src="https://d3js.org/d3.v3.js"></script>
+    <script type="text/javascript" src="../static/js/app.js"></script>
+  </body>
+
+</html>

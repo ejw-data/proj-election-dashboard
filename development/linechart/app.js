@@ -1,4 +1,4 @@
-var margin = {top: 20, right: 50, bottom: 30, left: 50},
+var margin = {top: 20, right: 55, bottom: 30, left: 50},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
@@ -11,8 +11,10 @@ var x = d3.time.scale()
 var y = d3.scale.linear()
     .range([height, 0]);
 
-var color = d3.scale.category10();
-
+// var color = d3.scale.category10();
+var color = d3.scale.ordinal()
+      .domain(["Democratic", "Republican"])
+      .range(["#00AEF3", "#E9141D"]);
 var xAxis = d3.svg.axis()
     .scale(x)
     .orient("bottom");

@@ -13,6 +13,9 @@ body {
 
 }
 
+p { font-size: large;
+
+}
 .iframeContainer {
   padding: 20px;
   border: 1px solid #e3e3e3;
@@ -34,11 +37,11 @@ h4 {
 
 /*https://search.creativecommons.org/photos/d4fef16c-8059-40f2-a932-dd9c67d025e5 */
 .header-bg{
-  background-image: url("../images/mount_rushmore.jpg");
+  background-image: url("../images/uscapitol.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 250px;
-  margin-top:-50px;
+  min-height: 350px;
+  margin-top:0px;
 }
 
 .header-title{
@@ -80,4 +83,15 @@ button {
 
 .browser text {
   text-anchor: left;
+#map, #map2, #map3, #scatter, #linechart{
+  height:100%;
+}
+
+#countdown{font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+font-weight: bold;
+}
+
+h3 {font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+
 }

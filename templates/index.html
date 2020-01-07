@@ -8,6 +8,7 @@
   <script src="../static/data/107_update.js" type="text/javascript"></script>
   <script src="../static/data/114_update.js" type="text/javascript"></script>
 
+
   <!-- Bootstrap and general website structure -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -31,62 +32,76 @@
 
     <div class="row header-bg row-min">
       <div class="col-xs-12 col-md-12 col-lg-12 header-title col-min">   
-        <h1>Election Voting Trends</h1>
+        <h2 style="color: #E9141D"><strong>Congressional Voting Trends</strong></h2><br><br><h3 style= "color:#00AEF3">Countdown to Election 2020:</h3><h3 style= "color:white"id="countdown"></h3> 
       </div>
     </div>
     <div class="row row-min">
       <div class="col-xs-12 col-md-12 col-lg-12">   
-        <h2>Every 10 years...</h2><p>the United States Census determines the number of electoral votes for each state and the number of US House of Representatives members will be sent to Washington.  The determination of the district boundaries are drawn by each state, which leads to interesting shapes with unique characteristics.</p>
-        <p>On this page you will find a variety of information about the districts of each state and how they are unique from one and another and how this may influence current voting trends.</p>
+        <h2 style= "color: #00AEF3">Every 10 years...</h2 ><p> as mandated by Article 1, Section 2 of the Constitution and Title 13 of the U.S. Code, the Census determines the electoral college for each state and the number of US House of Representatives. 
+        The determination of the district boundaries are drawn by each state's legislature, which can lead to interesting geographical shapes with unique characteristics.
+        On this page you'll find a variety of data about the districts of each state, their uniqueness and how this may influence the upcoming 2020 elections. <strong>Please click, hover and zoom til your heart's content!</strong></p>
       </div>
     </div>
-   
+  
     <div class="row row-min">
       <div class="col-xs-12 col-md-12 col-lg-12">   
-        <h2>District Maps...</h2><p>Below is the district map for the 114th Congress.  This congressional session began January 3, 2015 and adjourned January 3, 2017.  The officials elected to this congress were elected the term prior to the 2016 Presidential Elections and can provide some information about the general direction that the country was headed.  </p>
-        <p>When compared to the congressional district map of the 107th Congress, a significant difference can be seen.  The 107th Congress began January 3, 2001 and adjourned Juanuary 3, 2003.  This congress had the most complete information and had similar characteristics with the 2016 election year  -- a narrow margin in a Republican Presidential victory, a recovery from a recession, rapidly increasing natioanl debt, and many other relations.</p>
+        <h2 style="color: #E9141D">District Maps...</h2><p>Below is the district map for the 114th Congress.  This congressional session began January 3, 2015 and adjourned January 3, 2017.  The members elected to this congress were elected the term prior to the 2016 Presidential elections, and provided insights about the general direction that the country was headed as shown in the scatter plot on this page.</p>
+        <p>When compared to the congressional district map of the 107th Congress, a significant difference is clearly visible.  The 107th Congress began January 3, 2001 and adjourned January 3, 2003.  
+          This congress had the most complete information and had similar characteristics with the 2016 election year -- a narrow Republican presidential victory, recovery from a recession, rapidly ballooning national debt, and many other similar issues.</p>
       </div>
     </div>
     <div class="row row-min">
       <div class="col-xs-12 col-md-12 col-lg-12 col-min col-map">  
-        <h2>114th Congressional Districts (2015-2017)</h2> 
+        <h2 style= "color: #00AEF3">114th Congressional Districts (2015-2017)</h2> 
         <div id="map"><!-- Append Map. --></div>
       </div>
     </div>
 
     <div class="row row-min">
       <div class="col-xs-12 col-md-12 col-lg-12 col-min col-map">  
-        <h2>107th Congressional Districts (2001-2003)</h2> 
+        <h2 style="color: #E9141D">107th Congressional Districts (2001-2003)</h2> 
         <div id="map2"><!-- Append Map. --></div>
       </div>
     </div>
 
     <div class="row row-min">
       <div class="col-xs-12 col-md-12 col-lg-12">   
-        <h2>Gerrymandering...</h2><p>Creating favorable districts for a specific political party is commonly brought to federal courts and just by viewing the odd shapes makes one question the fair distribution.  </p>
-        <p>With the nation polarized and politicians closely aligning their actions with their home district's beliefs, one must wonder if the districts have been drawn on ideological basis; thus, reinforcing isolated political views.  Below are the two maps from above overlayed so that the district difference can be observed.</p>
+        <h2 style= "color: #00AEF3">Gerrymandering...</h2><p>Creating favorable districts for a specific political party is commonly brought to federal courts, and simply by viewing the odd shapes makes one question the fair distribution.
+        With the nation polarized and politicians closely aligning their actions with their home district's beliefs, one must wonder if the districts have been drawn on ideological basis; thus, reinforcing isolated political views.  Below are the two maps from above overlayed so that the district difference can be observed.</p>
       </div>
     </div>
 
     <div class="row row-min">
       <div class="col-xs-12 col-md-12 col-lg-12 col-min col-map">  
-        <h2>District Changes Over 14 Years</h2> 
+        <h2 style="color: #E9141D">District Changes Over 14 Years</h2> 
         <div id="map3"><!-- Append Map. --></div>
       </div>
     </div>
 
-  <div class="row row-min">
-    <div class="col-xs-12 col-md-12 col-lg-12 col-min">    
+  <div class="row row-min"> 
+    <div class="col-xs-12 col-md-12 col-lg-12 col-min col-map"> 
+      <h2 style= "color: #E9141D">2016 Congressional District Election Data</h2>   
       <div id="scatter"><!-- Append Scatter Plot. --></div>
     </div>
   </div>
 
-  <!-- <div class="row row-min"> 
-    <div class="col-xs-12 col-md-12 col-lg-12 col-min col-line">   
-      <button onclick="transition()">Update</button> 
-      <div id="linechart"></div>
-    </div>
-  </div> -->
+  <script> 
+    var deadline = new Date("Nov 3, 2020 00:00:00").getTime(); 
+    var x = setInterval(function() { 
+    var now = new Date().getTime(); 
+    var t = deadline - now; 
+    var days = Math.floor(t / (1000 * 60 * 60 * 24)); 
+    var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60)); 
+    var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60)); 
+    var seconds = Math.floor((t % (1000 * 60)) / 1000); 
+    document.getElementById("countdown").innerHTML = days + " days, "  
+    + hours + " hr, " + minutes + " min, " + seconds + " sec "; 
+        if (t < 0) { 
+            clearInterval(x); 
+            document.getElementById("demo").innerHTML = "EXPIRED"; 
+        } 
+    }, 1000); 
+  </script>
 
   <!-- Line Chart JS -->
   <script type="text/javascript" src="https://d3js.org/d3.v3.js"></script>
@@ -94,15 +109,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
  
-  <!-- <script type="text/javascript" src="../static/js/app.js"></script> -->
   <script type="text/javascript" src="../static/js/master.js"></script>
   <script type="text/javascript" src="../static/js/mapgamma.js"></script>
   <script type="text/javascript" src="../static/js/mapdelta.js"></script>
   <script type="text/javascript" src="../static/js/mapzed.js"></script>
  
-  
-
-
 </body>
 
 </html>
