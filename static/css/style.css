@@ -95,3 +95,7 @@ h3 {font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida
   font-weight: bold;
 
 }
+
+.white-text {
+  color: white!important;
+}

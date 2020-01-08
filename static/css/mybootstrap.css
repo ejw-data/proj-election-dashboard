@@ -8,7 +8,7 @@ body {
 }
 h1, h2, h3 {
     font-family: Georgia, serif;
-    color: orange;
+    color: #E9141D;
     font-weight:700;
 }
 p {
@@ -24,7 +24,7 @@ p {
 
 .title {
     display: block;
-    color: orange;
+    color: #E9141D;
     font-weight:700;
     font-size: 1.25em;
     text-align:center;
@@ -33,12 +33,9 @@ p {
     text-align:center;
 }
 
-.white {
-    background-color:white;
-    padding: 2em;
-}
+
 .navbar-brand{
-    background-color: orange;
+    background-color: #E9141D;
     color:white!important;
     font-size:2em;
     font-weight:700;

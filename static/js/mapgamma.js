@@ -62,13 +62,13 @@ d3.json(link).then(function(data) {
             fillOpacity: 0.5
           });
         },
-        // When a feature (neighborhood) is clicked, it is enlarged to fit the screen
+        // When a feature (district) is clicked, it is enlarged to fit the screen
         click: function(event) {
           map.fitBounds(event.target.getBounds());
         }
       });
       // Giving each feature a pop-up with information pertinent to it
-      layer.bindPopup("<h3>District: " + feature.properties.DISTRICT + "</h3> <hr> <p>" + feature.properties.PARTY + "</p><br><p>"+ feature.properties.NAME+"</p><br><a href="+feature.properties.TAG+" class=%22btn btn-primary btn-sm btn-block%22 role=%22button%22>Learn More</a>");
+      layer.bindPopup("<h4>District: " + feature.properties.DISTRICT + "</h4> <hr> <span>" + feature.properties.PARTY + "</span><br><span>" + feature.properties.NAME + "</span><br><a href=" + feature.properties.TAG + " class = \"btn btn-primary btn-sm btn-block\" style = \"color:white\" role=\"button\">Learn More</a>");
 
     }
   }).addTo(map);
