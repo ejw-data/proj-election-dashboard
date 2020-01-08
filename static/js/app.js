@@ -1,3 +1,7 @@
+function passValue() {
+  return district_code;
+}
+
 var margin = {top: 20, right: 50, bottom: 30, left: 50},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
@@ -53,8 +57,11 @@ var svg = d3.select("#linechart").append("svg")    // changed select(body) to se
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+var api_link = "/api/election/president/"+district_code;
+// console.log(api_link)
+
 // d3.tsv("../static/data/data.tsv", function(error, data) {
-d3.json("/api/election/president/CA-01", function(error, data) {
+d3.json(api_link, function(error, data) {
   
   
   color.domain(d3.keys(data[0]).filter(function(key) { return key !== "date"; }));

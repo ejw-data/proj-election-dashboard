@@ -179,8 +179,9 @@ def district_info(district):
     election = Election.query.filter_by(code=district)
     election_schema = ElectionSchema(many=True)
     data = election_schema.dump(election)
-    data1 = data[0]
-    return render_template("district_template.html", data = data1)
+    data1 = data
+    location = district
+    return render_template("district_template.html", district=location)
 
 @app.route("/api/all")
 def district_table():
