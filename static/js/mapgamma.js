@@ -13,14 +13,10 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: API_KEY
 }).addTo(map);
 
-// If data.beta.nyc is down comment out this link
-// var link = "http://data.beta.nyc//dataset/0ff93d2d-90ba-457c-9f7e-39e47bf2ac5f/resource/" +
-// "35dd04fb-81b3-479b-a074-a27a37888ce7/download/d085e2f8d0b54d4590b1e7d1f35594c1pediacitiesnycneighborhoods.geojson";
 
-// Uncomment this link local geojson for when data.beta.nyc is down
 var link = "../static/data/114_update.json";
 
-// Function that will determine the color of a neighborhood based on the borough it belongs to
+// Function that will determine the color of district
 function chooseColor(district) {
   switch (district) {
   case "Republican":
@@ -72,7 +68,7 @@ d3.json(link).then(function(data) {
         }
       });
       // Giving each feature a pop-up with information pertinent to it
-      layer.bindPopup("<h3>District: " + feature.properties.DISTRICT + "</h3> <hr> <p>" + feature.properties.PARTY + "</p><br><p>"+ feature.properties.NAME+"</p>");
+      layer.bindPopup("<h3>District: " + feature.properties.DISTRICT + "</h3> <hr> <p>" + feature.properties.PARTY + "</p><br><p>"+ feature.properties.NAME+"</p><br><a href="+feature.properties.TAG+" class=%22btn btn-primary btn-sm btn-block%22 role=%22button%22>Learn More</a>");
 
     }
   }).addTo(map);
