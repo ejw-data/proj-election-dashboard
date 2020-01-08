@@ -35,19 +35,45 @@
         </div>
       </div>
       <div class="row row-min">
-        <div class="col-xs-12 col-md-12 col-lg-12">
-          <h2 style= "color: #00AEF3">Testing Database...</h2 ><p> {{data}}</p>
+        <div class="col-xs-6 col-md-6 col-lg-6">
+          <h3 style= "color: #00AEF3">The Rep...</h3 >
+          <p> Congressional District:  {{data[0].district}}</p>
+          <p> Representative:  {{data[0].first_name}} {{data[0].last_name}}</p>
+          <p> First Elected:  {{data[0].first_elected}}</p>
+          <p> Birth Year:  {{data[0].birth_year}}</p>
+          <p> Gender:  {{data[0].gender}}</p>
+          <p> Religious Affiliation:  {{data[0].religion}}</p>
+          <p> Race:  {{data[0].race_ethnicity}}</p>
+          <p> Political Party:  {{data[0].party}}</p>
+          <p> LGBTQ:  {{data[0].lgbtq}}</p>
+        </div>
+        <div class="col-xs-6 col-md-6 col-lg-6">
+          <h3 style= "color: #00AEF3">The District...</h3 >
+          <p> Adult White:  {{data[0].acs_population_adult_white}}%</p>
+          <p> Adult Black:  {{data[0].acs_population_adult_black}}%</p>
+          <p> Adult Asian Pacific Islander:  {{data[0].acs_population_adult_asianpacificislander}}%</p>
+          <p> Adult Native American:  {{data[0].acs_population_adult_native}}%</p>
+          <p> Adult Other Race:  {{data[0].acs_population_adult_other}}%</p>
+          <p> Voting Age Population:  {{data[0].acs_votingagepopulation_total}}</p>
+          <p> Median Income:  ${{data[0].acs_medianincome}}</p>
+          <p> Median Income Rank:  {{data[0].acs_medianincome_rank}} ut of 435</p>
+          <p> BA/BS and Age 25+:  {{data[0].acs_bachelordegree_age25plus}}%</p>
+          <p> College Degree Rank:  {{data[0].acs_ba_rank}} out of 435</p>
+          <p> College Degrees (White):  {{data[0].acs_ba_white}}%</p>
+          <p> College Degrees Rank (White):  {{data[0].acs_ba_white_rank}} out of 435</p>
         </div>
       </div>
-      <div class="row row-min">
-        <div class="col-xs-12 col-md-12 col-lg-12 col-min">
-          <button onclick="transition()">Update</button>    
-          <div id="linechart"><!-- Append LineChart --></div>
-        </div>
-      </div>
-    <script src="https://d3js.org/d3.v3.js"></script>
-    <script type="text/javascript" src="../static/js/app.js"></script>
     
-  </body>
+    <div class="row row-min">
+      <div class="col-xs-12 col-md-12 col-lg-12 col-min">
+        <button onclick="transition()">Update</button>    
+        <div id="linechart"><!-- Append LineChart --></div>
+      </div>
+    </div>
+  </div>
+  <script src="https://d3js.org/d3.v3.js"></script>
+  <script type="text/javascript" src="../static/js/app.js"></script>
+    
+</body>
 
 </html>
