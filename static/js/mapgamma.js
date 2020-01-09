@@ -38,7 +38,7 @@ d3.json(link).then(function(data) {
     style: function(feature) {
       return {
         color: "white",
-        // Call the chooseColor function to decide which color to color our neighborhood (color based on borough)
+        // Call the chooseColor function to decide which color to color our district (color based on party)
         fillColor: chooseColor(feature.properties.PARTY),
         fillOpacity: 0.5,
         weight: 1.5

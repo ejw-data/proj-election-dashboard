@@ -227,9 +227,6 @@ def district_election_api(district):
     return jsonify(graph_data)
 
 
-#Need Route for my scatter and line graphs and route for individual pages.
-#Also I need to import my api key so that it remains hidden and remove the config file from the webpage.
-
 if __name__ == '__main__':
     app.run()
 

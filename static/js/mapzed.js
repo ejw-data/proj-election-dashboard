@@ -9,6 +9,7 @@ var streetmap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.pn
   accessToken: API_KEY
 })
 
+// In future add selectable colors for each map layer
 // function chooseColor(precinct) {
 //     switch (precinct) {
 //     case "Republican":
@@ -41,7 +42,7 @@ var election114 = L.geoJSON(year114, {
         return {
         color: "black",
         opacity: 0.5,
-        // Call the chooseColor function to decide which color to color our neighborhood (color based on borough)
+        // Call the chooseColor function to decide which color to color our district (color based on party)
         fillColor: "red", //chooseColor(feature.properties.PARTY),
         fillOpacity: 0.0,
         weight: 1.5

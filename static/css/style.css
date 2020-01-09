@@ -13,9 +13,47 @@ body {
 
 }
 
-p { font-size: large;
-
 }
+h1, h2, h3 {
+  font-family: Georgia, serif;
+  color: #E9141D;
+  font-weight:700;
+}
+
+h4 { 
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: rgb(22, 88, 66);
+ 
+}
+
+p {
+  line-height:2em;
+  font-size: large;
+}
+
+.col-md-12, .col-md-8, .col-md-4 {
+  margin-top: 4em;
+  padding: 0 2em 0 2em;
+}
+.row {
+  margin-bottom:3em;
+}
+
+.title {
+  display: block;
+  color: #E9141D;
+  font-weight:700;
+  font-size: 1.25em;
+  text-align:center;
+}
+
+.theme-showcase {
+  margin-top: 5em;
+}
+
+
+
+
 .iframeContainer {
   padding: 20px;
   border: 1px solid #e3e3e3;
@@ -25,11 +63,7 @@ p { font-size: large;
 background-size: auto;
 }
 
-h4 { 
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  color: rgb(22, 88, 66);
- 
-}
+
 
 .scatter-text{
   font-size: 20px;
@@ -83,6 +117,8 @@ button {
 
 .browser text {
   text-anchor: left;
+}
+
 #map, #map2, #map3, #scatter, #linechart{
   height:100%;
 }
