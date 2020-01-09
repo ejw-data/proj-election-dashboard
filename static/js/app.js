@@ -2,7 +2,7 @@ function passValue() {
   return district_code;
 }
 
-var margin = {top: 20, right: 50, bottom: 30, left: 50},
+var margin = {top: 55, right: 85, bottom: 30, left: 50},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
@@ -15,7 +15,10 @@ var x = d3.time.scale()
 var y = d3.scale.linear()
     .range([height, 0]);
 
-var color = d3.scale.category10();
+// var color = d3.scale.category10();
+var color = d3.scale.ordinal()
+     .domain(["Democratic", "Republican"])
+     .range(["#00AEF3", "#E9141D"]);
 
 var xAxis = d3.svg.axis()
     .scale(x)
@@ -54,6 +57,7 @@ var stack = d3.layout.stack()
 var svg = d3.select("#linechart").append("svg")    // changed select(body) to select(linechart)
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
+    .attr("stroke-width", 3.0)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
