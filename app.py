@@ -179,26 +179,53 @@ def district_info(district):
     election = Election.query.filter_by(code=district)
     election_schema = ElectionSchema(many=True)
     data = election_schema.dump(election)
-    return render_template("district_template.html", data = data)
+    data1 = data
+    location = district
+    return render_template("district_template.html", data = data1, district=location)
 
 @app.route("/api/all")
 def district_table():
     elections = Election.query.all()  #.filter_by(x=2)
     elections_schema = ElectionSchema(many=True)
-    data= elections_schema.dump(elections)
-    return {"data":data}
+    result= elections_schema.dump(elections)
+    data = jsonify(result)
+    return data
 
 @app.route("/api/<district>")
 def district_api(district):
     election = Election.query.filter_by(code=district)
     election_schema = ElectionSchema(many=True)
     result = election_schema.dump(election)
-    data = result[0]
-    return {"data":data}
+    data = jsonify(result)
+    return data
 
+@app.route("/api/election/president/<district>")
+def district_election_api(district):
+    election = Election.query.filter_by(code=district)
+    election_schema = ElectionSchema(many=True)
+    result = election_schema.dump(election)
+    
+    for item in result:
+        v2000d = item["votepercent_president2000_democrat"]
+        v2000r = item["votepercent_president2000_republican"]
+        v2004d = item["votepercent_president2004_democrat"]
+        v2004r = item["votepercent_president2004_republican"]
+        v2008d = item["votepercent_president2008_democrat"]
+        v2008r = item["votepercent_president2008_republican"]
+        v2012d = item["votepercent_president2012_democrat"]
+        v2012r = item["votepercent_president2012_republican"]
+        v2016d = item["votepercent_president2016_democrat"]
+        v2016r = item["votepercent_president2016_republican"]
 
-#Need Route for my scatter and line graphs and route for individual pages.
-#Also I need to import my api key so that it remains hidden and remove the config file from the webpage.
+        graph_data = [{"date":"00-Jan-01", "Democrat":v2000d, "Republican":v2000r},
+        {"date":"04-Jan-01", "Democrat":v2004d, "Republican":v2004r},
+        {"date":"08-Jan-01", "Democrat":v2008d, "Republican":v2008r},
+        {"date":"12-Jan-01", "Democrat":v2012d, "Republican":v2012r},
+        {"date":"16-Jan-01", "Democrat":v2016d, "Republican":v2016r}]
+
+	
+    return jsonify(graph_data)
+
 
 if __name__ == '__main__':
     app.run()

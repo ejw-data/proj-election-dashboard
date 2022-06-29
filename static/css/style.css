@@ -13,6 +13,46 @@ body {
 
 }
 
+h1, h2, h3 {
+  font-family: Georgia, serif;
+  color: #E9141D;
+  font-weight:700;
+}
+
+h4 { 
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: rgb(22, 88, 66);
+ 
+}
+
+p {
+  line-height:2em;
+  font-size: large;
+}
+
+.col-md-12, .col-md-8, .col-md-4 {
+  margin-top: 4em;
+  padding: 0 2em 0 2em;
+}
+.row {
+  margin-bottom:3em;
+}
+
+.title {
+  display: block;
+  color: #E9141D;
+  font-weight:700;
+  font-size: 1.25em;
+  text-align:center;
+}
+
+.theme-showcase {
+  margin-top: 5em;
+}
+
+
+
+
 .iframeContainer {
   padding: 20px;
   border: 1px solid #e3e3e3;
@@ -22,11 +62,7 @@ body {
 background-size: auto;
 }
 
-h4 { 
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  color: rgb(22, 88, 66);
- 
-}
+
 
 .scatter-text{
   font-size: 20px;
@@ -34,11 +70,11 @@ h4 {
 
 /*https://search.creativecommons.org/photos/d4fef16c-8059-40f2-a932-dd9c67d025e5 */
 .header-bg{
-  background-image: url("../images/mount_rushmore.jpg");
+  background-image: url("../images/uscapitol.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 250px;
-  margin-top:-50px;
+  min-height: 350px;
+  margin-top:0px;
 }
 
 .header-title{
@@ -54,11 +90,47 @@ h4 {
   margin-bottom:3em;
 }
 
-.col-map{
+.col-map, .col-line{
   min-height: 400px;
   max-width:100%;
 }
 
-#map, #map2, #map3{
+#map, #map2, #map3, #linechart{
   height:100%;
+}
+
+
+/* Line Chart CSS */
+button {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.browser text {
+  text-anchor: left;
+}
+
+#map, #map2, #map3, #scatter, #linechart{
+  height:100%;
+}
+
+#countdown{font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+font-weight: bold;
+}
+
+h3 {font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+
+}
+
+.white-text {
+  color: white!important;
 }

@@ -1,4 +1,4 @@
-var margin = {top: 20, right: 50, bottom: 30, left: 50},
+var margin = {top: 40, right: 55, bottom: 30, left: 50},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
@@ -11,8 +11,10 @@ var x = d3.time.scale()
 var y = d3.scale.linear()
     .range([height, 0]);
 
-var color = d3.scale.category10();
-
+// var color = d3.scale.category10();
+var color = d3.scale.ordinal()
+      .domain(["Democratic", "Republican"])
+      .range(["#00AEF3", "#E9141D"]);
 var xAxis = d3.svg.axis()
     .scale(x)
     .orient("bottom");
@@ -47,9 +49,10 @@ function area_to_stacked(t) {
 var stack = d3.layout.stack()
     .values(function(d) { return d.values; });
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("#linechart").append("svg")    // changed select(body) to select(linechart)
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
+    .attr("stroke-width", 3.0)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -113,12 +116,12 @@ function transition() {
       .attr("transform", function(d) { return "translate(" + x(d.value.date) + "," + y(d.value.y0 + d.value.y) + ")"; });
     postTransition.selectAll("path")
       .attrTween("d", shapeTween(area_to_stacked, 1))
-      .style("stroke-opacity", 0.0);
+      .style("stroke-opacity", 1.0);
     postTransition.selectAll("text")
       .attr("transform", function(d) { return "translate(" + x(d.value.date) + "," + y(d.value.y0 + d.value.y / 2) + ")"; });
   } else {
     transition.selectAll("path")
-      .style("stroke-opacity", 1.0)
+      .style("stroke-opacity", 2.5)
       .attrTween("d", shapeTween(area_to_stacked, 0));
     transition.selectAll("text")
         .attr("transform", function(d) { return "translate(" + x(d.value.date) + "," + y(d.value.y0 + d.value.y) + ")"; });

@@ -13,14 +13,9 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: API_KEY
 }).addTo(map2);
 
-// If data.beta.nyc is down comment out this link
-// var link = "http://data.beta.nyc//dataset/0ff93d2d-90ba-457c-9f7e-39e47bf2ac5f/resource/" +
-// "35dd04fb-81b3-479b-a074-a27a37888ce7/download/d085e2f8d0b54d4590b1e7d1f35594c1pediacitiesnycneighborhoods.geojson";
-
-// Uncomment this link local geojson for when data.beta.nyc is down
 var link = "../static/data/107_update.json";
 
-// Function that will determine the color of a neighborhood based on the borough it belongs to
+// Function that will determine the color of a district based on party
 function chooseColor(district) {
   switch (district) {
   case "Republican":
@@ -38,11 +33,11 @@ function chooseColor(district) {
 d3.json(link).then(function(data) {
   // Creating a geoJSON layer with the retrieved data
   L.geoJson(data, {
-    // Style each feature (in this case a neighborhood)
+    // Style each feature (in this case a district)
     style: function(feature) {
       return {
         color: "white",
-        // Call the chooseColor function to decide which color to color our neighborhood (color based on borough)
+        // Call the chooseColor function to decide which color to color our district (color based on party affiliation)
         fillColor: chooseColor(feature.properties.PARTY),
         fillOpacity: 0.5,
         weight: 1.5
@@ -66,7 +61,7 @@ d3.json(link).then(function(data) {
             fillOpacity: 0.5
           });
         },
-        // When a feature (neighborhood) is clicked, it is enlarged to fit the screen
+        // When a feature (district) is clicked, it is enlarged to fit the screen
         click: function(event) {
           map.fitBounds(event.target.getBounds());
         }
