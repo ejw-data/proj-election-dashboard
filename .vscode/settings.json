@@ -1,4 +1,0 @@
-{
-    "python.pythonPath": "C:\\Users\\ejwda\\.virtualenvs\\dashboard-project2-fbLDoQrm\\Scripts\\python.exe",
-    "python.linting.pylintArgs": ["--load-plugins", "pylint_flask"]
-}
