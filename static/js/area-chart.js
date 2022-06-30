@@ -58,7 +58,7 @@ var svg = d3.select("#linechart").append("svg")    // changed select(body) to se
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .attr("stroke-width", 3.0)
-  .append("g")
+    .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 var api_link = "/api/election/president/"+district_code;

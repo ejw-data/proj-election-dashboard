@@ -48,7 +48,7 @@ def district_info(district):
     
     session.close()
     location = district
-    return render_template("district_template.html", data = results, district=location)
+    return render_template("district.html", data = results, district=location)
 
 
 @app.route("/api/all")

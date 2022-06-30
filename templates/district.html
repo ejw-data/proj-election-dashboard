@@ -2,19 +2,21 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <title>Election Dashboard</title>
   <link rel="icon" href="" type="image/x-icon">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+  <!-- Google Analytics -->
+  <!-- Global site tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155896426-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'UA-155896426-1');
   </script>
 
-  <meta charset="UTF-8">
-  <title>Election Dashboard</title>
+
   <!-- Bootstrap and general website structure -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -27,10 +29,14 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
+
+
   <link rel="stylesheet" href="../static/css/style.css">
+
   <!-- May Need to add in  -->
   <script src="https://d3js.org/d3.v5.min.js"></script>
 
+  <!-- Pass jinja2 variable to js -->
   <script type="text/javascript">
     var district_code = '{{ district }}';
   </script>
@@ -96,7 +102,9 @@
     </div>
   </div>
   <script src="https://d3js.org/d3.v3.js"></script>
-  <script type="text/javascript" src="../static/js/app.js"></script>
+
+  <!-- Area plot -->
+  <script type="text/javascript" src="../static/js/area-chart.js"></script>
 
 </body>
 

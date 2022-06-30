@@ -1,22 +1,19 @@
-
+//https://gis.stackexchange.com/questions/66193/multiple-instance-of-leaflet-on-page
 // Creating map object
-var map = L.map("map", {
+var map2 = L.map("map2", {
   center: [37.5, -98.35],
   zoom: 4
 });
 
 // Adding tile layer
-L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
-  attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
-  maxZoom: 22,
-  id: "mapbox.streets",
-  accessToken: API_KEY
-}).addTo(map);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  maxZoom: 22
+}).addTo(map2);
 
+var link = "../static/data/107_update.json";
 
-var link = "../static/data/114_update.json";
-
-// Function that will determine the color of district
+// Function that will determine the color of a district based on party
 function chooseColor(district) {
   switch (district) {
   case "Republican":
@@ -34,11 +31,11 @@ function chooseColor(district) {
 d3.json(link).then(function(data) {
   // Creating a geoJSON layer with the retrieved data
   L.geoJson(data, {
-    // Style each feature (in this case a neighborhood)
+    // Style each feature (in this case a district)
     style: function(feature) {
       return {
         color: "white",
-        // Call the chooseColor function to decide which color to color our district (color based on party)
+        // Call the chooseColor function to decide which color to color our district (color based on party affiliation)
         fillColor: chooseColor(feature.properties.PARTY),
         fillOpacity: 0.5,
         weight: 1.5
@@ -68,8 +65,8 @@ d3.json(link).then(function(data) {
         }
       });
       // Giving each feature a pop-up with information pertinent to it
-      layer.bindPopup("<h4>District: " + feature.properties.DISTRICT + "</h4> <hr> <span>" + feature.properties.PARTY + "</span><br><span>" + feature.properties.NAME + "</span><br><a href=" + feature.properties.TAG + " class = \"btn btn-primary btn-sm btn-block\" style = \"color:white\" role=\"button\">Learn More</a>");
+      layer.bindPopup("<h3>District: " + feature.properties.DISTRICT + "</h3> <hr> <p>" + feature.properties.PARTY + "</p><br><p>"+ feature.properties.NAME+"</p>");
 
     }
-  }).addTo(map);
+  }).addTo(map2);
 });
