@@ -1,6 +1,25 @@
-# dashboard-project2
-![Screen Shot 2020-01-23 at 12 36 53 PM](https://user-images.githubusercontent.com/54033512/73013447-f5418500-3ddd-11ea-8370-c15b08d51d64.png)
-## Every 10 years...
-as mandated by Article 1, Section 2 of the Constitution and Title 13 of the U.S. Code, the Census determines the electoral college for each state and the number of US House of Representatives. The determination of the district boundaries are drawn by each state's legislature, which can lead to interesting geographical shapes with unique characteristics. On the interactive **website** below, you'll find a variety of data and visualizations about the districts of each state, their uniqueness and how this may influence the upcoming 2020 elections. Please **click**, **hover** and **zoom** til your heart's content!
+# dashboard-election  
 
-**http://election-dashboard.herokuapp.com/**
+Author:  Erin James Wills - ejw.data@gmail.com  
+
+![](./static/images/mount_rushmore.jpg)  
+
+<br>
+
+## Overview  
+
+
+
+
+
+## Database Setup
+
+1.  Create a database named `election_db` in pgAdmin (postgreSQL).
+1.  Open a query tool and generate the schema by running the contents of `development/data/postgres/sql_erd_final.txt`.
+1.  Insert the table data by importing the contents of `development/data/postgres/data_db.csv`  
+1.  Confirm your username and port number by going to the properties of the server and going to the connections tab.  Username and port are listed on this tab.  
+1.  Update this information in the app.py within the `create_engine()` function.  
+
+## Serializing Postgres Responses  
+*  One option is to use Marshmallow since it's schema can be used to assist with this.  
+*  Otherwise, each needed postgres column can be extracted  

@@ -1,88 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155896426-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<head>
+  <link rel="icon" href="" type="image/x-icon">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155896426-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-      gtag('config', 'UA-155896426-1');
-    </script>
+    gtag('config', 'UA-155896426-1');
+  </script>
 
-      <meta charset="UTF-8">
-      <title>Election Dashboard</title>
-      <!-- Bootstrap and general website structure -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../static/css/style.css">
-    <!-- May Need to add in  -->
-    <script src="https://d3js.org/d3.v5.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Election Dashboard</title>
+  <!-- Bootstrap and general website structure -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../static/css/style.css">
+  <!-- May Need to add in  -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
 
-    <script type="text/javascript">
-      var district_code = '{{ district }}';
-    </script>
-    
+  <script type="text/javascript">
+    var district_code = '{{ district }}';
+  </script>
 
-  </head>
-  <body>
-    <div class="container">
 
-      <div class="row header-bg row-min">
-        <div class="col-xs-12 col-md-12 col-lg-12 header-title col-min">   
-          <h2 style="color: #E9141D">Congressional Voting Trends</h2>
-        </div>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row header-bg row-min">
+      <div class="col-xs-12 col-md-12 col-lg-12 header-title col-min">
+        <h2 style="color: #E9141D">Congressional Voting Trends</h2>
       </div>
-      <div class="row row-min">
-        <div class="col-xs-12 col-md-12 col-lg-12">
-          <h2 style= "color: #00AEF3">Every 10 years...</h2 ><p>  as mandated by Article 1, Section 2 of the US Constitution and Title 13 of the US Code, the Census determines the number of electoral votes for each state and the number of US House of Representatives.  The determination of the district boundaries are drawn by each state's legislature, which can lead to interesting geographical shapes with unique characteristics.
-            On this page you'll find a variety of data about the districts of each state, their uniqueness and how this may influence the upcoming 2020 elections.</p>
-        </div>
+    </div>
+    <div class="row row-min">
+      <div class="col-xs-12 col-md-12 col-lg-12">
+        <h2 style="color: #00AEF3">Every 10 years...</h2>
+        <p> as mandated by Article 1, Section 2 of the US Constitution and Title 13 of the US Code, the Census
+          determines the number of electoral votes for each state and the number of US House of Representatives. The
+          determination of the district boundaries are drawn by each state's legislature, which can lead to interesting
+          geographical shapes with unique characteristics.
+          On this page you'll find a variety of data about the districts of each state, their uniqueness and how this
+          may influence the upcoming 2020 elections.</p>
       </div>
-      <div class="row row-min">
-        <div class="col-xs-6 col-md-6 col-lg-6">
-          <h3 style= "color: #00AEF3">The Rep...</h3 >
-          <p> Congressional District:  {{data[0].district}}</p>
-          <p> Representative:  {{data[0].first_name}} {{data[0].last_name}}</p>
-          <p> First Elected:  {{data[0].first_elected}}</p>
-          <p> Birth Year:  {{data[0].birth_year}}</p>
-          <p> Gender:  {{data[0].gender}}</p>
-          <p> Religious Affiliation:  {{data[0].religion}}</p>
-          <p> Race:  {{data[0].race_ethnicity}}</p>
-          <p> Political Party:  {{data[0].party}}</p>
-          <p> LGBTQ:  {{data[0].lgbtq}}</p>
-        </div>
-        <div class="col-xs-6 col-md-6 col-lg-6">
-          <h3 style= "color: #00AEF3">The District...</h3 >
-          <p> Adult White:  {{data[0].acs_population_adult_white}}%</p>
-          <p> Adult Black:  {{data[0].acs_population_adult_black}}%</p>
-          <p> Adult Asian Pacific Islander:  {{data[0].acs_population_adult_asianpacificislander}}%</p>
-          <p> Adult Native American:  {{data[0].acs_population_adult_native}}%</p>
-          <p> Adult Other Race:  {{data[0].acs_population_adult_other}}%</p>
-          <p> Voting Age Population:  {{data[0].acs_votingagepopulation_total}}</p>
-          <p> Median Income:  ${{data[0].acs_medianincome}}</p>
-          <p> Median Income Rank:  {{data[0].acs_medianincome_rank}} out of 435</p>
-          <p> BA/BS and Age 25+:  {{data[0].acs_bachelordegree_age25plus}}%</p>
-          <p> College Degree Rank:  {{data[0].acs_ba_rank}} out of 435</p>
-          <p> College Degrees (White):  {{data[0].acs_ba_white}}%</p>
-          <p> College Degrees Rank (White):  {{data[0].acs_ba_white_rank}} out of 435</p>
-        </div>
+    </div>
+    <div class="row row-min">
+      <div class="col-xs-6 col-md-6 col-lg-6">
+        <h3 style="color: #00AEF3">The Rep...</h3>
+        <p> Congressional District: {{ data[0].district}}</p>
+        <p> Representative: {{data[0].first_name}} {{data[0].last_name}}</p>
+        <p> First Elected: {{data[0].first_elected}}</p>
+        <p> Birth Year: {{data[0].birth_year}}</p>
+        <p> Gender: {{data[0].gender}}</p>
+        <p> Religious Affiliation: {{data[0].religion}}</p>
+        <p> Race: {{data[0].race_ethnicity}}</p>
+        <p> Political Party: {{data[0].party}}</p>
+        <p> LGBTQ: {{data[0].lgbtq}}</p>
       </div>
-    
+      <div class="col-xs-6 col-md-6 col-lg-6">
+        <h3 style="color: #00AEF3">The District...</h3>
+        <p> Adult White: {{data[0].acs_population_adult_white}}%</p>
+        <p> Adult Black: {{data[0].acs_population_adult_black}}%</p>
+        <p> Adult Asian Pacific Islander: {{data[0].acs_population_adult_asianpacificislander}}%</p>
+        <p> Adult Native American: {{data[0].acs_population_adult_native}}%</p>
+        <p> Adult Other Race: {{data[0].acs_population_adult_other}}%</p>
+        <p> Voting Age Population: {{data[0].acs_votingagepopulation_total}}</p>
+        <p> Median Income: ${{data[0].acs_medianincome}}</p>
+        <p> Median Income Rank: {{data[0].acs_medianincome_rank}} out of 435</p>
+        <p> BA/BS and Age 25+: {{data[0].acs_bachelordegree_age25plus}}%</p>
+        <p> College Degree Rank: {{data[0].acs_ba_rank}} out of 435</p>
+        <p> College Degrees (White): {{data[0].acs_ba_white}}%</p>
+        <p> College Degrees Rank (White): {{data[0].acs_ba_white_rank}} out of 435</p>
+      </div>
+    </div>
+
     <div class="row row-min">
       <div class="col-xs-12 col-md-12 col-lg-12 col-min">
-        <button onclick="transition()">Update</button>    
-        <div id="linechart"><!-- Append LineChart --></div>
+        <button onclick="transition()">Update</button>
+        <div id="linechart">
+          <!-- Append LineChart -->
+        </div>
       </div>
     </div>
   </div>
   <script src="https://d3js.org/d3.v3.js"></script>
   <script type="text/javascript" src="../static/js/app.js"></script>
-    
+
 </body>
 
 </html>
