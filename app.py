@@ -15,7 +15,7 @@ ENV = 'dev'
 if ENV == 'dev':
     engine = create_engine('postgresql://postgres:postgres@localhost:5432/election_db')
 else:
-    engine = create_engine('postgres://bdwrgfxtgonvby:333ccd10d6c1f8d04a9c2bd3023b9e48b343371559c97a034a28080decf9892c@ec2-107-22-216-123.compute-1.amazonaws.com:5432/d6cd55jo1ktp4t')
+    engine = create_engine('<AWS Postgre URL')
 
 
 # Reflect an existing database into a new model
