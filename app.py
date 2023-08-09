@@ -28,11 +28,14 @@ Base.prepare(engine, reflect=True)
 Election = Base.classes.districts
 
 # Create routes and api
+
+# shows index.html page
 @app.route('/') 
 def index():
     return render_template("index.html")
 
 
+# displays district information on district.html page
 @app.route("/<district>")
 def district_info(district):
 
@@ -51,6 +54,7 @@ def district_info(district):
     return render_template("district.html", data = results, district=location)
 
 
+# used to make the line chart on the index.html page
 @app.route("/api/all")
 def district_table():
 
@@ -85,6 +89,7 @@ def district_api(district):
     return json.dumps(results)
 
 
+# used to make area plot on the district.html page
 @app.route("/api/election/president/<district>")
 def district_election_api(district):
 
